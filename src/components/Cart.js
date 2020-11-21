@@ -142,6 +142,25 @@ class Cart extends Component {
                   <div className="cart">
                     <form onSubmit={this.createOrder}>
                       <ul className="form-container">
+                        <select className="title">
+                          <option value="mr">Mr</option>
+                          <option value="miss">Miss</option>
+                          <option value="mrs" selected>Mrs</option>
+                          <option value="master">Master</option>
+                          <option value="dr">Doctor</option>
+                          <option value="captain">Captain</option>
+                          <option value="lady">Lady</option>
+                      
+                        </select>
+                      <li>
+                          <label>Name</label>
+                          <input
+                            name="name"
+                            type="text"
+                            required
+                            onChange={this.handleInput}
+                          ></input>
+                        </li>
                         <li>
                           <label>Email</label>
                           <input
@@ -151,15 +170,7 @@ class Cart extends Component {
                             onChange={this.handleInput}
                           ></input>
                         </li>
-                        <li>
-                          <label>Name</label>
-                          <input
-                            name="name"
-                            type="text"
-                            required
-                            onChange={this.handleInput}
-                          ></input>
-                        </li>
+                       
                         <li>
                           <label>Address</label>
                           <input
