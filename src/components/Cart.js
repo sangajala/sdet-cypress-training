@@ -181,6 +181,15 @@ class Cart extends Component {
                           ></input>
                         </li>
                         <li>
+                          <label>Terms and Conditions</label>
+                          <input
+                            id="terms"
+                            type="checkbox"
+                            required
+                            onChange={this.handleInput}
+                          ></input>
+                        </li>
+                        <li>
                           <button className="button primary" type="submit">
                             Checkout
                           </button>

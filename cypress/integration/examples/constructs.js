@@ -2,8 +2,7 @@
 
 describe('Smoke Tests',()=>{
     
-    before('Login',()=>{
-        console.log('Before')
+    
     })
     beforeEach('Check Header',()=>{
         console.log('Before Each')
