@@ -50,6 +50,7 @@
     "npm": "6.9.0"
   },
   "devDependencies": {
-    "cypress": "^5.5.0"
+    "cypress": "^5.5.0",
+    "cypress-iframe": "^1.0.1"
   }
 }

@@ -1,13 +1,14 @@
 /// <reference types="cypress" />
+///<reference types="cypress-iframe" />
 
 
 describe('UI tests',()=>{
     before('visit home page',()=>{
         //visit home page
-        cy.visit('http://localhost:3000/')
-        cy.get('.button.primary').click()
+        // cy.visit('http://localhost:3000/')
+        // cy.get('.button.primary').click()
        
-        cy.xpath('//button[text()="Proceed"]').click()
+        // cy.xpath('//button[text()="Proceed"]').click()
     })
 
     it('Test type commands',()=>{
@@ -145,12 +146,65 @@ it('Advanced click with options',()=>{
             })
 
 
-            it.only('Right click ',()=>{
+            it('Right click ',()=>{
 
                 cy.visit('https://www.quirksmode.org/dom/events/tests/contextmenu.html#')
 
                 cy.contains('This link').rightclick()
             
                 })
+
+
+
+
+        it('Alerts', function (){
+            // launch the url
+            cy.visit("https://register.rediff.com/register/register.php?FormName=user_details");
+            // click on submit button to produce the alert pop up
+            cy.get('input[type="submit"]').click();
+            
+            cy.on('window:alert',(txt)=>{
+
+                console.log(txt)
+                expect(txt).to.contains('Your full name cannot be blank.');
+             })
+
+
+            });
+
+
+           
+
+                it.only('Confirmation', function (){
+               
+                    // click on submit button to produce the alert pop up
+                    cy.visit("https://www.tutorialspoint.com/selenium/selenium_automation_practice.htm");
+                    // click on submit button to produce the confirmation alert pop up
+                    cy.get('button[name="submit"]').click();
+                    // firing window: alert event with on() method
+                    cy.on('window:confirm',(txt)=>{
+                       
+                       expect(txt).to.contains('You are submitting information to an external page.sdsdsd');
+                    })
+        
+                    });
+
+
+                    it('iframe', function (){
+               
+                        // click on submit button to produce the alert pop up
+                        cy.visit("https://www.tutorialspoint.com/html/html_iframes.htm");
+            
+                        cy.frameLoaded()
+
+                        cy.frameLoaded('.result')
+
+                        cy.wait(20000)
+        
+
+                        cy.iframe('.result').contains('Home').should('be.visible')
+
+
+                        });
 })
 
