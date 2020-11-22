@@ -97,26 +97,19 @@ describe('UI tests',()=>{
             cy.get('#terms').should('be.checked')
             cy.get('#terms').uncheck()
             cy.get('#terms').should('not.be.checked')
-    }
-
-    )
+    })
 
     it('Advanced click',()=>{
 
         cy.get('.product img').dblclick()
         cy.get('.close-modal').click()
-
-}
-
-)
+    })
 
 it('Advanced click with options',()=>{
 
     cy.get('.product img').click('left',{waitForAnimations:true})
 
     cy.get('.product img').click(100,50)
-
-   
 
     })
 
@@ -175,7 +168,7 @@ it('Advanced click with options',()=>{
 
            
 
-                it.only('Confirmation', function (){
+                it('Confirmation', function (){
                
                     // click on submit button to produce the alert pop up
                     cy.visit("https://www.tutorialspoint.com/selenium/selenium_automation_practice.htm");
@@ -184,27 +177,51 @@ it('Advanced click with options',()=>{
                     // firing window: alert event with on() method
                     cy.on('window:confirm',(txt)=>{
                        
-                       expect(txt).to.contains('You are submitting information to an external page.sdsdsd');
+                       expect(txt).to.contains('You are submitting information to an external page');
+                       return false
                     })
         
                     });
 
 
-                    it('iframe', function (){
+                    it.only('iframe', function (){
                
                         // click on submit button to produce the alert pop up
                         cy.visit("https://www.tutorialspoint.com/html/html_iframes.htm");
             
-                        cy.frameLoaded()
+                        // cy.frameLoaded()
 
                         cy.frameLoaded('.result')
 
-                        cy.wait(20000)
+                         cy.wait(1000)
         
 
-                        cy.iframe('.result').contains('Home').should('be.visible')
+                        cy.contains('Home').should('be.visible')
 
 
                         });
-})
+
+
+
+    it("should handle the alerts automatically", () => 
+    {   
+        cy.on("uncaught:exception", (err, runnable) => {    
+             return false;   
+            });  
+          cy.visit("https://chercher.tech/practice/popups");
+            //window:confirm is the event which get fired on alert open
+            cy.on("window:confirm", (str) => {
+                    return false; 
+                 });
+            cy.get('[name="confirmation"]').click(); 
+        })
+
+
+                       
+                       
+                    })
+
+    
+
+    
 
