@@ -1,0 +1,4 @@
+{
+    "testFiles":"**/*.feature",
+    "baseUrl":"https://sdet-cypress-training.herokuapp.com/"
+}

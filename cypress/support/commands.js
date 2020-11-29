@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+import ProductDetailPage from './PageObjects/ProductDetailPage'
+
+// Cypress.Commands.add("addToCartRamana",()=>{
+//     const productDetailPage = new ProductDetailPage()
+//     productDetailPage.getAddToCart().click()
+// })

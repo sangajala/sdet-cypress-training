@@ -1,1 +1,11 @@
-{}
+{
+    "testFiles":"**/**.feature",
+    "baseUrl":"http://localhost:3000/",
+    "env":{
+        "DBUSER":"Sriram"
+    },
+    "reporter":"cypress-mochawesome-reporter",
+    "watchForFileChanges":true
+    
+   
+}
