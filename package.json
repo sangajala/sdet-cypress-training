@@ -28,7 +28,7 @@
     "server": "nodemon server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "browserstack-cypress run",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

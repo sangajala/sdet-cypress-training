@@ -21,6 +21,7 @@ After(()=>{
 
 Given(`I am in home page`,()=>{
     cy.visit("/")
+    cy.wait(30000)
 })
 
 When(`I select and item {string} and add it to cart`,(product)=>{
