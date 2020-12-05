@@ -6,7 +6,7 @@
     },
     "reporter":"cypress-mochawesome-reporter",
     "watchForFileChanges":true,
-    "projectId": "tb121p",
+    "projectId": "y843z9",
     "retries": {
         "runMode": 4,
         "openMode": 0
